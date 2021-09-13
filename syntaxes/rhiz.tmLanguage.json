@@ -1,0 +1,42 @@
+{
+  "scopeName": "source.rhiz",
+  "language": "Rhizfile",
+  "patterns": [ {"include": "#command"}, { "include": "#comment" }, { "include": "#expression" }],
+  "repository": {
+    "comment": {
+      "name": "comment.line.semicolon",
+      "match": ";.*$\n?"
+    },
+    "command": {
+        "name": "meta.declaration",
+        "match": "\\(\\s*(log|exec|empty-dir|delete|copy|rec-copy|par)",
+        "captures": {
+            "1": {
+                "name": "keyword.other"
+            }
+        }
+    },
+    "expression": {
+      "patterns": [
+        { "include": "#atom" },
+        { "include": "#string" },
+        { "include": "#s-expression" }
+      ]
+    },
+    "atom": {
+      "name": "source.rhiz.atom",
+      "match": "\\b[a-zA-Z0-9-+.+]+\\b"
+    },
+    "string": {
+      "name": "string.quoted.double",
+      "begin": "\"",
+      "end": "\""
+    },
+    "s-expression": {
+      "name": "meta.declaration",
+      "begin": "\\(",
+      "end": "\\)",
+      "patterns": [{"include": "#command"}, { "include": "#expression" }, { "include": "#comment" }]
+    }
+  }
+}

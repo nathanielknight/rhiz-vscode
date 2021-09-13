@@ -12,10 +12,17 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "rhiz",
+				"id": "Rhizfile",
 				"extensions": [ ".rhiz", ".rhizfile"],
 				"filenames": ["Rhizfile", "rhizfile"],
 				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "Rhizfile",
+				"scopeName": "source.rhiz",
+				"path": "./syntaxes/rhiz.tmLanguage.json"
 			}
 		]
 	},
