@@ -9,15 +9,13 @@
 	"categories": [
 		"Other"
 	],
-	"activationEvents": [
-		"onCommand:rhiz.helloWorld"
-	],
-	"main": "./dist/extension.js",
 	"contributes": {
-		"commands": [
+		"languages": [
 			{
-				"command": "rhiz.helloWorld",
-				"title": "Hello World"
+				"id": "rhiz",
+				"extensions": [ ".rhiz", ".rhizfile"],
+				"filenames": ["Rhizfile", "rhizfile"],
+				"configuration": "./language-configuration.json"
 			}
 		]
 	},
